@@ -24,3 +24,11 @@ Go to terminal & run
 
 https://user-images.githubusercontent.com/8495058/173994430-a1a2d0ba-c298-40fe-9aed-17d9a3ec879c.mov
 
+
+# Troubleshoot
+
+## Could not connect to development server
+
+To resolve this issue you can either run `adb reverse tcp:8081 tcp:8081` or kill process that running on 8081 port. 
+& if nothing works then reboot is the option 😉
+
