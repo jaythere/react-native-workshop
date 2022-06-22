@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View, Text, Image, Dimensions} from 'react-native';
 import {Button, Link} from '../components';
 import {COLORS, FONT} from '../utils';
-import appBackground from './../assets/app-background.png';
+const appBackground = require('./../assets/app-background.png');
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -16,11 +16,15 @@ const WelcomeScreen = ({navigation}) => {
         </Text>
       </View>
       <View style={styles.appImgWrapper}>
-        <Image
-          style={styles.appImgBackground}
-          resizeMode="center"
-          source={appBackground}
-        />
+        {appBackground && (
+          <Image
+            style={styles.appImgBackground}
+            resizeMode="center"
+            source={{
+              uri: 'https://github.com/jaythere/react-native-workshop/blob/master/src/assets/app-background.png',
+            }}
+          />
+        )}
       </View>
       <View style={styles.buttonWrapper}>
         <Button

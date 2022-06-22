@@ -66,7 +66,12 @@ const RegisterScreen = ({navigation}) => {
               onChangeTextHandler={setOccupation}
             />
             <View style={styles.registerImgWrapper}>
-              <Image style={styles.registerImgBackground} source={register} />
+              <Image
+                style={styles.registerImgBackground}
+                source={{
+                  uri: 'https://github.com/jaythere/react-native-workshop/blob/master/src/assets/register.png',
+                }}
+              />
             </View>
             <View style={styles.btnWrapper}>
               <Button
