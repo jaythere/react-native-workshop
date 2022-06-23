@@ -42,26 +42,31 @@ const RegisterScreen = ({navigation}) => {
           <View style={styles.registerContainer}>
             <Input
               label="User Name*"
+              placeholder="User Name"
               value={userName}
               onChangeTextHandler={setUserName}
             />
             <Input
               label="Full Name*"
+              placeholder="Full Name"
               value={fullName}
               onChangeTextHandler={setFullName}
             />
             <Input
               label="Email Address*"
+              placeholder="Email Address"
               value={email}
               onChangeTextHandler={setEmail}
             />
             <Input
               label="Birthday"
+              placeholder="Birthday"
               value={birthday}
               onChangeTextHandler={setBirthday}
             />
             <Input
               label="Occupation"
+              placeholder="Occupation"
               value={occupation}
               onChangeTextHandler={setOccupation}
             />

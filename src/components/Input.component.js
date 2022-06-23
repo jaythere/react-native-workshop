@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {TextInput, StyleSheet, View, Text} from 'react-native';
 import {COLORS, FONT} from '../utils';
 
-const Input = ({label, onChangeTextHandler, value}) => {
+const Input = ({label, onChangeTextHandler, value, placeholder}) => {
   return (
     <View style={styles.wrapper}>
       {label && <Text style={styles.label}>{label}</Text>}
@@ -11,6 +11,7 @@ const Input = ({label, onChangeTextHandler, value}) => {
         value={value}
         style={styles.textInput}
         onChangeText={onChangeTextHandler}
+        placeholder={placeholder}
       />
     </View>
   );
@@ -42,12 +43,14 @@ Input.propTypes = {
   label: PropTypes.string,
   onChangeTextHandler: PropTypes.func,
   value: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 Input.defaultProps = {
   label: '',
   onChangeTextHandler: () => {},
   value: '',
+  placeholder: '',
 };
 
 export default Input;
