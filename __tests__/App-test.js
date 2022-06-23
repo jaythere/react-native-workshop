@@ -8,16 +8,22 @@ import App from '../App';
 import {fireEvent, render, waitFor} from '@testing-library/react-native';
 // Note: test renderer must be required after react-native.
 
-it('renders correctly', async () => {
-  const {getByTestId, getByText, queryByTestId} = render(<App />);
+describe('workshop test suites', () => {
+  it('renders welcome screen', async () => {
+    const {getByText} = render(<App />);
 
-  // Expectation for Screen 1 - Welcome Screen
-  const joinOurSchoolText = getByText('Join Our School');
-  expect(joinOurSchoolText).toBeDefined();
+    // verifying join our school text on landing page
+    const joinOurSchoolText = getByText('Join Our School');
+    expect(joinOurSchoolText).toBeDefined();
+  });
 
-  // Expectation for Screen 2 - Register Screen
-  const button = getByText('Join Our School');
-  fireEvent.press(button);
+  it('renders register screen', async () => {
+    const {getByText} = render(<App />);
 
-  await waitFor(() => expect(getByText('Continue')).toBeDefined());
+    // firing button press event on welcome screen to navigate to register screen
+    const button = getByText('Join Our School');
+    fireEvent.press(button);
+
+    await waitFor(() => expect(getByText('Continue')).toBeDefined());
+  });
 });
